@@ -1,0 +1,90 @@
+{
+  "name": "raca-tools",
+  "version": "1.0.1",
+  "description": "radiocaca NFT market support trade tool with setting alarm for price warning",
+  "keywords": [
+    "radiocaca",
+    "metamon",
+    "usm",
+    "radiocaca tools",
+    "metamon tools",
+    "usm tools",
+    "nft market tools"
+  ],
+  "author": "radiocaca.tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radiocacatools/radiocaca.tools.git"
+  },
+  "license": "SEE LICENSE IN WTFPL",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "build": {
+    "appId": "radiocaca.tools",
+    "asar": true,
+    "productName": "Raca Tools",
+    "copyright": "Copyright © year 2021 by radiocaca.tools"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "set GENERATE_SOURCEMAP=false && react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "set NODE_ENV=production && yarn react-build && electron-builder -w",
+    "build:mac": "set NODE_ENV=production && yarn react-build && electron-builder -m",
+    "build:linux": "set NODE_ENV=production && yarn react-build && electron-builder -l"
+  },
+  "dependencies": {
+    "@reach/router": "^1.3.4",
+    "axios": "^0.24.0",
+    "auto-launch": "^5.0.5",
+    "bootstrap": "^5.1.1",
+    "child_process": "^1.0.2",
+    "cross-env": "6.0.2",
+    "electron-is-dev": "^2.0.0",
+    "elegant-icons": "0.0.1",
+    "et-line": "^1.0.1",
+    "font-awesome": "^4.7.0",
+    "query-string": "^7.0.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.3",
+    "react-dom": "^17.0.2",
+    "react-photo-gallery": "^8.0.0",
+    "react-responsive-modal": "^6.1.0",
+    "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
+    "react-table": "^6.8.6",
+    "react-tsparticles": "^1.34.0",
+    "sass": "^1.39.2",
+    "styled-components": "^5.3.1",
+    "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "4.1.2",
+    "electron": "6.0.11",
+    "electron-builder": "^21.2.0",
+    "prettier": "^1.4.4",
+    "rimraf": "^3.0.2",
+    "wait-on": "3.3.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
